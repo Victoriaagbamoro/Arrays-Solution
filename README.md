@@ -14,18 +14,46 @@ Arrays Solution
 
 // SOLUTION 1-
 
-let color = ['Blue', 'Green', 'Red', 'Orange', 'Violet', 'Indigo', 'Yellow'];
+color = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow", "Black"];
 
-    console.log(' "1st Choice is" ' + color[0] + '.');
-    console.log(' "2nd Choice is" ' + color[1] + '.');
-    console.log(' "3rd Choice is" ' + color[2] + '.');
-    console.log(' "4th Choice is" ' + color[3] + '.');
-    console.log(' "5th Choice is" ' + color[4] + '.');
-    console.log(' "6th Choice is" ' + color[5] + '.');
-    console.log(' "7th Choice is" ' + color[6] + '.');
+o = ["th","st","nd","rd"]
 
-
-
+for (let i = 0; i < color.length; i++){
+    switch(color[i]){
+        case "Blue":
+            console.log(` "${o[0]} choice of color is" ${color[i]}.`);
+            break;
+            continue;
+        case "Green":
+            console.log(` "${o[0]} choice of color is" ${color[i]}.`);
+            break;
+            continue;
+        case "Red":
+            console.log(` "${o[1]} choice of color is" ${color[i]}.`);
+            break;
+            continue;
+        case "Orange":
+            console.log(` "${o[2]} choice of color is" ${color[i]}.`);
+            break;
+        case "Violet":
+            console.log(` "${o[3]} choice of color is" ${color[i]}.`);
+            break;
+        case "Indigo":
+            console.log(` "${o[1]} choice of color is" ${color[i]}.`);
+            break;
+        case "Yellow":
+            console.log(` "${o[3]} choice of color is" ${color[i]}.`);
+            break;
+        case "Black":
+            console.log(` "${o[2]} choice of color is" ${color[i]}.`);
+            break;
+        default:
+            console.log('Ensure that you input the right color.');
+            break;
+        
+    }
+    // console.log(color[i]);
+}
     // 2.
     // Write a simple JavaScript program to join all elements of the following array into a string. Go to the editor
     // Sample array : myColor = ["Red", "Green", "White", "Black"];
@@ -36,10 +64,13 @@ let color = ['Blue', 'Green', 'Red', 'Orange', 'Violet', 'Indigo', 'Yellow'];
     
     // SOLUTION 2-
 
-    myColor = ["Red", "Green", "White", "Black"];
-    console.log(myColor.join());
-    console.log(myColor.join(","));
-    console.log(myColor.join('+'))
+    myColor = ["Red", "Green", "White", "Black", 'Orange'];
+    let newColor = myColor;
+    
+    console.log(newColor.join());
+    console.log(newColor.join(","));
+    console.log(newColor.join('+'));
+
 
     3.
     employees = [
@@ -204,56 +235,49 @@ let color = ['Blue', 'Green', 'Red', 'Orange', 'Violet', 'Indigo', 'Yellow'];
         salary: 50000
     }
 ]
-
-
 //   a.) => Return a new array with those employees that are web developers
-// SOLUTION 1
-// Here array.values() function is called. 
-var employeesJob = employees.values();
-  
-// Here specific elements of the array is being printed. 
-    if (employeesJob = employees) {
-        // do some array stuff 
-        console.log(employeesJob[7]);
-        console.log(employeesJob[8]);
-        
+//   b.) => Return a new array with those employees that are both web developers and from Nigeria
+//   c.) => Return a new array with those employees below 20
+//   d.) => Return a new array with those employees that are active//   e.) => Find the highest paid developer
+SOLUTION
+for(let i = 0; i < employees.length; i++){
+    
+    if(employees[i].Job === 'Web Developer'){
+        console.log(`There names are ${employees[i].first_name}, and they the only 
+${employees[i].Job} we have in the company for now. With the id of ${employees[i].id}.`);
     }
 
-//   b.) => Return a new array with those employees that are both web developers and from Nigeria
-var webDevelopersNotNigeria = employees.values();
+    //   b.) => Return a new array with those employees that are both web developers and from Nigeria
+    if(employees[i].Job === 'Web Developer' && employees[i].Country === 'Nigeria'){
+        console.log(`The employee is with the id of ${employees[i].id}, who is a ${employees[i].Job} and is from ${employees[i].Country}. `);
+    }
+    
 
-if(webDevelopersNotNigeria = employees){
-   console.log(webDevelopersNotNigeria[7]);
+    // c.) => Return a new array with those employees below 20
+    if(employees[i].age <=20){
+        console.log(employees[i]);
+    }
+    
+
+    // d.) => Return a new array with those employees that are active
+    if(employees[i].active === true){
+        console.log(employees[i]);
+    }
+
+    // e.) => Find the highest paid developer
+    function HighestPaidEmployee(){
+        // findEmployee = employees[i].salary;
+
+        if(employees[i].salary >= 750000.09){
+            console.log(employees[i]);
+        }
+
+    }
+    HighestPaidEmployee();
+
+
+
 }
 
-//   c.) => Return a new array with those employees below 20
-var employeesBelow20 = employees.values();
-
-if(employeesBelow20 = employees){
-    console.log(employeesBelow20[9]);
-    console.log(employeesBelow20[5]);
-    console.log(employeesBelow20[6]);
-}
-//   d.) => Return a new array with those employees that are active
-
-
-function activeEmployees(){
-    if(activeEmployee = employees){
-        console.log(activeEmployee[0])
-        console.log(activeEmployee[1])
-        console.log(activeEmployee[2])
-        console.log(activeEmployee[3])
-        console.log(activeEmployee[4])
-        console.log(activeEmployee[5])
-    }   
-}
-activeEmployees();
-
-//   e.) => Find the highest paid developer
-
-var highestPaidSalary = employees.values();
-if(highestPaidSalary = employees){
-console.log(highestPaidSalary[8]);
-};
 
 
